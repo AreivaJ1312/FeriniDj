@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="shortcut icon" href="imagenes/logo.jpeg">
+    <title>Ferini Accesorios de arcilla polimérica</title>
+    {% load static %}
+    {%block css%}
+
+    {%endblock%}
+    
+  </head>
+  <body>
+    <div id="barra" class="container">
+        <nav class ="navbar navbar-expand-lg navbar-light  bg-white">
+            <a class="navbar-brand">
+                <img id="logo" src="{% static 'core/imagenes/logoo.png'%}"   alt="logo">
+            </a>
+            <button class="navbar-toggler" data-target="#menu" data-toggle="collapse" type="button" > 
+                <span class="navbar-toggler-icon"></span>    
+            </button>
+            <div class="collapse navbar-collapse" id="menu"> <!-- -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a href="{% url 'home'%}" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{% url 'aros'%}" class="nav-link">Productos</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="contactanos1.0.html" class="nav-link">Contactáctanos</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                  <a href="https://www.instagram.com/ferini_chic/?hl=es-la" target="blank"><img class="redes" src="{% static 'core/imagenes/insta.png'%}" alt=""></a>
+                </span>
+                <span class="navbar-text">
+                  <a href="https://api.whatsapp.com/send?phone=56950596898" target="blank"><img class="redes" src="{% static 'core/imagenes/wp.png'%}"  alt=""></a>
+                </span>
+
+            </div>
+          </nav>
+    </div>
+    <div id="contenidoPrincipal">
+        {% block contenido %}
+
+        {%endblock%}
+    </div>
+
+    
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <hr class="colorhr featurette-divider">
+    <p class="float-right"><a href="#">Inicio</a></p>
+    <p class="elFooter">&copy;2020  - Producto 100% artesanal   </p>
+    <p class="elFooter"> La Florida - Santiago,Chile </p>
+  </footer>
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {%block javascript%}
+
+    {%endblock%}
+    
+  </body>
+</html>
