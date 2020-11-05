@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import home
-from .views import aros
+from .views import home, aros, Contacto
+
 
 urlpatterns = [
     path('', home, name ="home"),
     path('aros', aros, name ="aros"),
+    path('Contacto', Contacto, name ="Contacto"),
 ]

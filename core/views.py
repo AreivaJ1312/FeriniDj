@@ -8,3 +8,6 @@ def home(request):
 
 def aros(request):
     return render(request,'core/aros.html')
+
+def Contacto(request):
+    return render(request,'core/Contacto.html')
