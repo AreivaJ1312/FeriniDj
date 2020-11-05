@@ -55,7 +55,6 @@ function validarFormulario(){
     }
 
 //Validacion para campo no vacio sugerencias y consultas
-
     if(sugerenciaConsulta=="" || sugerenciaConsulta==null ||sugerenciaConsulta=="..."){
         cambiarColor("sugerenciaConsulta");
         mostrarAlerta("Campo obligatorio *Sugerencia o consulta");
@@ -65,7 +64,6 @@ function validarFormulario(){
 
 
 //validacion para campo no vacio comunas
-
     if(comunas=="" || comunas==null ||comunas=="..."){
         cambiarColor("comunas");
         mostrarAlerta("Campo obligatorio *comunas");
@@ -73,7 +71,6 @@ function validarFormulario(){
     }
 
 //validacion para campo no vacio en areatext
-
     if(areaText=="" || areaText==null ){
         cambiarColor("areaText");
         mostrarAlerta("Campo obligatorio *mensaje");
