@@ -22,3 +22,7 @@ urlpatterns = [
     path('', include('core.urls')),
     
 ]
+
+admin.site.site_header =" Administración Ferini chic"
+admin.site.index_title =" Módulos de administración"
+admin.site.site_title =" Ferini_chic"
