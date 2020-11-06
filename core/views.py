@@ -20,3 +20,6 @@ def ListadoAros(request):
     }
 
     return render(request, 'core/ListadoAros.html', data)
+
+def nuevo_aro(request):
+    return render(request,'core/nuevo_aro.html')
