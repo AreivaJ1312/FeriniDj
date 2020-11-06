@@ -1,0 +1,40 @@
+{% extends 'core/baseEstructura.html' %}
+
+{% load static %}
+
+{%block css%}
+<link rel="stylesheet" href="{% static 'core/css/estiloIndex.css'%}">
+{%endblock%}
+
+{%block javascript%}
+{%endblock%}
+
+
+{% block contenido %}
+<h2>Listado de aros</h2>
+<table>
+    <tr>
+        <th>Nombre--</th>
+        <th>color----</th>
+        <th>tamaño----</th>
+        <th>stock----</th>
+        <th>tipoPin----</th>
+        <th>tipoforma----</th>
+    </tr>
+
+    {%for a in aros_%}
+    <tr>
+       <td>{{a.nombre}}</td>
+       <td>{{a.color}}</td>
+       <td>{{a.tamaño}}</td>
+       <td>{{a.stock}}</td>
+       <td>{{a.tipoPin}}</td>
+       <td>{{tipoforma}}</td>
+    </tr>
+    {%endfor%}
+
+</table>
+
+
+
+{%endblock%}
