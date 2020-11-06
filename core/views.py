@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Aro
 
 # Create your views here.
 
@@ -11,3 +12,11 @@ def aros(request):
 
 def Contacto(request):
     return render(request,'core/Contacto.html')
+
+def ListadoAros(request):
+    aros= Aro.objects.all()
+    data ={
+        'aros':aros
+    }
+
+    return render(request, 'core/ListadoAros.html', data)
