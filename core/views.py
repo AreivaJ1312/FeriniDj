@@ -14,9 +14,9 @@ def Contacto(request):
     return render(request,'core/Contacto.html')
 
 def ListadoAros(request):
-    aros= Aro.objects.all()
+    aros_= Aro.objects.all()
     data ={
-        'aros':aros
+        'aros_':aros_
     }
 
     return render(request, 'core/ListadoAros.html', data)
