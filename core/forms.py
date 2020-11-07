@@ -9,7 +9,7 @@ class AroForm(ModelForm):
     tamaño= forms.IntegerField(min_value=1, max_value=10)
     stock= forms.IntegerField(min_value=0, max_value=50)
     tipoPin= forms.CharField(min_length=3, max_length=20)
-    tipoforma= forms.CharField(min_length=5 ,max_length=50)
+    
     class Meta:
         model = Aro
-        fields = ['nombre','color','tamaño','stock','tipoPin','tipoforma']
+        fields = ['nombre','color','tamaño','stock','tipoPin','tipoforma','imagen']

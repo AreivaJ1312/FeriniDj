@@ -16,6 +16,7 @@ class Aro (models.Model):
     stock= models.IntegerField()
     tipoPin= models.CharField(max_length=20)
     tipoforma= models.ForeignKey(TipoAro, on_delete=models.CASCADE)
+    imagen = models.ImageField(null=True, blank =True)
 
     def __str__(self):
         return self.nombre

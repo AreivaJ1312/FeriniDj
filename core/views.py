@@ -5,7 +5,11 @@ from .forms  import AroForm
 # Create your views here.
 
 def home(request):
-    return render(request,'core/home.html')
+    data={
+        'aros':Aro.objects.all()
+
+    }
+    return render(request,'core/home.html',data)
 
 
 def aros(request):
@@ -28,7 +32,7 @@ def nuevo_aro(request):
     }
 
     if request.method =='POST':
-        formulario = AroForm(request.POST)
+        formulario = AroForm(request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
             data['mensaje'] = "Guardado correctamente"
@@ -42,11 +46,11 @@ def modificar_aro(request, id):
         'form': AroForm(instance=aro)
     }
     if request.method =='POST':
-        formulario = AroForm(data=request.POST, instance=aro)
+        formulario = AroForm(data=request.POST, instance=aro, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
             data['mensaje']="Modificado correctamente"
-            data['form'] = formulario
+            data['form'] = AroForm(instance=Aro.objects.get(id=id))
   
 
     return render (request,'core/modificar_aro.html', data)  
