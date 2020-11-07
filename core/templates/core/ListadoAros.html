@@ -7,6 +7,8 @@
 {%endblock%}
 
 {%block javascript%}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="{% static 'core/jquery/confirmacion.js'%}"></script>
 {%endblock%}
 
 
@@ -20,16 +22,25 @@
         <th>stock----</th>
         <th>tipoPin----</th>
         <th>tipoforma----</th>
+        <th>Opciones</th>
+       
     </tr>
 
     {%for a in aros_%}
     <tr>
+
        <td>{{a.nombre}}</td>
        <td>{{a.color}}</td>
        <td>{{a.tamaño}}</td>
        <td>{{a.stock}}</td>
        <td>{{a.tipoPin}}</td>
-       <td>{{tipoforma}}</td>
+       <td>{{a.tipoforma}}</td>
+       <td>
+        <a href="{% url 'modificar_aro' a.id %}">Modificar</a>
+       </td>
+       <td>
+        <a href="#" onclick="confirmarEliminacion({{a.id}})">Eliminar</a> 
+       </td>
     </tr>
     {%endfor%}
 
