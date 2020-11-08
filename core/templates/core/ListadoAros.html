@@ -3,7 +3,7 @@
 {% load static %}
 
 {%block css%}
-<link rel="stylesheet" href="{% static 'core/css/estiloIndex.css'%}">
+<link rel="stylesheet" href="{% static 'core/css/estiloListado.css'%}">
 {%endblock%}
 
 {%block javascript%}
@@ -13,39 +13,46 @@
 
 
 {% block contenido %}
-<h2>Listado de aros</h2>
-<table>
-    <tr>
-        <th>Nombre--</th>
-        <th>color----</th>
-        <th>tamaño----</th>
-        <th>stock----</th>
-        <th>tipoPin----</th>
-        <th>tipoforma----</th>
-        <th>Opciones</th>
-       
-    </tr>
+<div class="container">
+    <h2>Listado de aros</h2>
+    <hr class="featurette-divider">
+    <div class="col-12 row">
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Color</th>
+                <th>Tamaño</th>
+                <th>Tock</th>
+                <th>Tipo pin</th>
+                <th>Tipo forma</th>
+                <th>Opciones</th>
+                <th></th>
+            
+            </tr>
 
-    {%for a in aros_%}
-    <tr>
+            {%for a in aros_%}
+            <tr>
 
-       <td>{{a.nombre}}</td>
-       <td>{{a.color}}</td>
-       <td>{{a.tamaño}} cm</td>
-       <td>{{a.stock}}</td>
-       <td>{{a.tipoPin}}</td>
-       <td>{{a.tipoforma}}</td>
-       <td>
-        <a href="{% url 'modificar_aro' a.id %}">Modificar</a>
-       </td>
-       <td>
-        <a href="#" onclick="confirmarEliminacion({{a.id}})">Eliminar</a> 
-       </td>
-    </tr>
-    {%endfor%}
+            <td>{{a.nombre}}</td>
+            <td>{{a.color}}</td>
+            <td>{{a.tamaño}} cm</td>
+            <td>{{a.stock}}</td>
+            <td>{{a.tipoPin}}</td>
+            <td>{{a.tipoforma}}</td>
+            <td>
+                <a href="{% url 'modificar_aro' a.id %}">Modificar</a>
+            </td>
+            <td>
+                <a href="#" onclick="confirmarEliminacion({{a.id}})">Eliminar</a> 
+            </td>
+            </tr>
+            {%endfor%}
 
-</table>
+        </table>
+    </div>
+</div>
 
+</div>
 
 
 {%endblock%}

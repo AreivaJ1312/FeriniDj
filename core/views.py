@@ -7,13 +7,16 @@ from .forms  import AroForm
 def home(request):
     data={
         'aros':Aro.objects.all()
-
     }
     return render(request,'core/home.html',data)
 
 
 def aros(request):
-    return render(request,'core/aros.html')
+    data={
+        'tipoAros':TipoAro.objects.all(),
+        'aritos':Aro.objects.all()
+    }
+    return render(request,'core/aros.html',data)
 
 def Contacto(request):
     return render(request,'core/Contacto.html')
@@ -59,5 +62,3 @@ def elimimar_aro(request,id):
     aro=Aro.objects.get(id=id)
     aro.delete()
     return redirect(to="ListadoAros")
-
-

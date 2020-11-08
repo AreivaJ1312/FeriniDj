@@ -2,7 +2,7 @@ from django  import forms
 from django.forms import ModelForm
 from .models import Aro, TipoAro
 
-
+#validaciones
 class AroForm(ModelForm):
     nombre= forms.CharField(min_length=2, max_length=90)
     color= forms.CharField(min_length=4, max_length=30)

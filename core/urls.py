@@ -9,5 +9,5 @@ urlpatterns = [
     path('ListadoAros',ListadoAros ,name= "ListadoAros" ),
     path('nuevo_aro', nuevo_aro, name= "nuevo_aro"),
     path('modificar_aro/<id>', modificar_aro, name="modificar_aro"),
-    path('eliminar_aro/<id>',elimimar_aro, name="eliminar_aro")
+    path('eliminar_aro/<id>',elimimar_aro, name="eliminar_aro"),
 ]
