@@ -20,6 +20,7 @@
       
     <hr class="featurette-divider">
     <br>
+
     <div class="store-wrapper">
       <div class="category_list">
         <a href="#" class="category_item" category="all">Todos</a>  <!--Atributo creado por nosotros category para poder filtrar despues-->
@@ -27,11 +28,21 @@
         <a href="#" class="category_item" category="Corazones">Corazones</a>
         <a href="#" class="category_item" category="Ovalo">Ovalos</a>
       </div>
+ 
+    
+    
       <section class="products-list">
+        {%for a in aros%}
         <div class="product-item" category="Circulares">
-          <img src="{% static 'core/imagenes/1.png'%}" alt="" >
+          {% if a.imagen %}
+          <img src="{{ a.imagen.url }}" alt="" >
           <a href="#">Rojos ciruclares</a>
+          {%else %}
+          <img src="{% static 'core/imagenes/1.png'%}" alt="" >
+
+          {%endif%}
         </div>
+        {%endfor%}
         <div class="product-item" category="Corazones">
           <img src="{% static 'core/imagenes/2.png'%}" alt="" >
           <a href="#">Corazones rojos</a>
