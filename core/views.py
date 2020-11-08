@@ -31,6 +31,7 @@ def ListadoAros(request):
 
     return render(request, 'core/ListadoAros.html', data)
 
+@permission_required('core.add_pelicula')
 def nuevo_aro(request):
     data ={
         'form': AroForm()
@@ -44,7 +45,7 @@ def nuevo_aro(request):
     return render(request,'core/nuevo_aro.html',data)
 
 
-
+@permission_required('core.change_aro') 
 def modificar_aro(request, id):
     aro= Aro.objects.get(id=id)
     data = {
@@ -59,7 +60,7 @@ def modificar_aro(request, id):
   
 
     return render (request,'core/modificar_aro.html', data)  
-
+@permission_required('core.delete_aro')
 def elimimar_aro(request,id):
     aro=Aro.objects.get(id=id)
     aro.delete()
