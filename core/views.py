@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import Aro,TipoAro
+from .models import Aro,TipoAro,Contacto,comunas,sugerenciaConsulta
 from .forms  import AroForm
-from .forms  import AroForm, CustomUserForm
+from .forms  import AroForm, CustomUserForm, ContactForm
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import login, authenticate
 # Create your views here.
@@ -21,7 +21,15 @@ def aros(request):
     return render(request,'core/aros.html',data)
 
 def Contacto(request):
-    return render(request,'core/Contacto.html')
+    data={
+        'form':ContactForm(),
+        'contacto':Contacto.objects.all(),
+        'sugerencia': sugerenciaConsulta.objects.all(),
+        'nombreComuna':comunas.objects.all()
+    }
+  
+    return render(request,'core/Contacto.html', data)
+
 
 def ListadoAros(request):
     aros_= Aro.objects.all()
@@ -31,7 +39,7 @@ def ListadoAros(request):
 
     return render(request, 'core/ListadoAros.html', data)
 
-@permission_required('core.add_pelicula')
+@permission_required('core.add_aro')
 def nuevo_aro(request):
     data ={
         'form': AroForm()
@@ -60,6 +68,7 @@ def modificar_aro(request, id):
   
 
     return render (request,'core/modificar_aro.html', data)  
+
 @permission_required('core.delete_aro')
 def elimimar_aro(request,id):
     aro=Aro.objects.get(id=id)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TipoAro, Aro
+from .models import TipoAro, Aro, Contacto,sugerenciaConsulta,comunas
 
 # Register your models here.
 
@@ -12,3 +12,13 @@ class AroAdmin (admin.ModelAdmin):
 admin.site.register(TipoAro)
 admin.site.register(Aro, AroAdmin)
 
+
+class contactAdmin(admin.ModelAdmin):
+    list_display= ['nombreC','apellido','email','sugCon','comuna','areaText']
+    search_fields= ['nombreC','apellido','email','comuna']
+    list_filter = ['sugCon']
+    list_per_page = 20
+
+admin.site.register(sugerenciaConsulta)
+admin.site.register(Contacto,contactAdmin)
+admin.site.register(comunas)
