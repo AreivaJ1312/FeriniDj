@@ -1,9 +1,10 @@
 {% extends 'core/baseEstructura.html' %}
 
 {% load static %}
+{% load crispy_forms_tags %}
 
 {%block css%}
-<link rel="stylesheet" href="{% static 'core/css/estiloListado.css'%}">
+<link rel="stylesheet" href="{% static 'core/css/estiloIndex.css'%}">
 {%endblock%}
 
 {%block javascript%}
@@ -13,19 +14,18 @@
 
 
 {% block contenido %}
-<h2>Listado de aros</h2>
 <div class="container">
-    <hr class="featurette-divider">
-    <div class="col-12 row">
-        <table>
+    <div class="table-responsive-sm">
+        <h2>Listado de aros</h2>
+        <table class="table table-striped ">
             <tr>
                 <th>Nombre</th>
                 <th>Color</th>
                 <th>Tamaño</th>
-                <th>Tock</th>
-                <th>Tipo pin</th>
-                <th>Tipo forma</th>
-                <th>Opciones</th>
+                <th>Stock</th>
+                <th>TipoPin</th>
+                <th>Tipoforma</th>
+                <th> &nbsp;&nbsp;&nbsp;&nbsp;Opciones:</th>
                 <th></th>
             
             </tr>
@@ -49,10 +49,8 @@
             {%endfor%}
 
         </table>
+
     </div>
 </div>
-
-</div>
-
 
 {%endblock%}
