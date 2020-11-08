@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Aro,TipoAro
-from .forms  import AroForm
+from .forms  import AroForm, CustomUserForm
+from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth import login, authenticate
 
 # Create your views here.
 
@@ -11,9 +13,13 @@ def home(request):
     }
     return render(request,'core/home.html',data)
 
-
 def aros(request):
-    return render(request,'core/aros.html')
+    data={
+        'tipoAros':TipoAro.objects.all(),
+        'aritos':Aro.objects.all()
+    }
+    return render(request,'core/aros.html',data)
+
 
 def Contacto(request):
     return render(request,'core/Contacto.html')
@@ -26,6 +32,7 @@ def ListadoAros(request):
 
     return render(request, 'core/ListadoAros.html', data)
 
+@permission_required('core.add_aro')
 def nuevo_aro(request):
     data ={
         'form': AroForm()
@@ -61,3 +68,19 @@ def elimimar_aro(request,id):
     return redirect(to="ListadoAros")
 
 
+def registro_usuario(request):
+    data={
+        'form':CustomUserForm()
+
+    }
+    if request.method =='POST':
+        formulario = CustomUserForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            #autenticar al usuario e ir al inicio
+            username = formulario.cleaned_data['username']
+            password = formulario.cleaned_data['password1']
+            user = authenticate(username = username, password=password)
+            login(request,user)
+            return redirect(to='home')
+    return render(request, 'registration/registrar.html',data)

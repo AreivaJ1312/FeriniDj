@@ -16,109 +16,56 @@
 {% block contenido %}
 
 
-  <div class="wrap">
-      
-    <hr class="featurette-divider">
-    <br>
+<div class="wrap">
 
-    <div class="store-wrapper">
-      <div class="category_list">
-        <a href="#" class="category_item" category="all">Todos</a>  <!--Atributo creado por nosotros category para poder filtrar despues-->
-        <a href="#" class="category_item" category="Circulares">Circulares</a>
-        <a href="#" class="category_item" category="Corazones">Corazones</a>
-        <a href="#" class="category_item" category="Ovalo">Ovalos</a>
-      </div>
- 
-    
-    
-      <section class="products-list">
-        {%for a in aros%}
-        <div class="product-item" category="Circulares">
-          {% if a.imagen %}
-          <img src="{{ a.imagen.url }}" alt="" >
-          <a href="#">Rojos ciruclares</a>
-          {%else %}
-          <img src="{% static 'core/imagenes/1.png'%}" alt="" >
+  <hr class="featurette-divider">
+  <br>
 
-          {%endif%}
-        </div>
-        {%endfor%}
-        <div class="product-item" category="Corazones">
-          <img src="{% static 'core/imagenes/2.png'%}" alt="" >
-          <a href="#">Corazones rojos</a>
-        </div>
-        <div class="product-item" category="Ovalo">
-          <img src="{% static 'core/imagenes/3.png'%}" alt="" >
-          <a href="#">Ovalados rojos</a>
-        </div>
-        <div class="product-item" category="Circulares">
-          <img src="{% static 'core/imagenes/4.png'%}" alt="" >
-          <a href="#">Multicolor circulares</a>
-        </div>
-
-        <div class="product-item" category="Ovalo">
-          <img src="{% static 'core/imagenes/5.png'%}" alt="" >
-          <a href="#">Ovalados celestes</a>
-        </div>
-
-        <div class="product-item" category="Corazones">
-          <img src="{% static 'core/imagenes/6.png'%}" alt="" >
-          <a href="#">Corazones celestes</a>
-        </div>
-
-        <div class=" product-item" category="Corazones">
-          <img src="{% static 'core/imagenes/7.png'%}" alt="" >
-          <a href="#">Corazones morados</a>
-        </div>
-
-        <div class="product-item" category="Circulares">
-          <img src="{% static 'core/imagenes/8.png'%}" alt="" >
-          <a href="#">Circulares morados</a>
-        </div>
-
-        <div class="product-item" category="Corazones">
-          <img src="{% static 'core/imagenes/9.png'%}" alt="" >
-          <a href="#">Corazones rayados celeste</a>
-        </div>
-
-        <div class="product-item" category="Circulares">
-          <img src="{% static 'core/imagenes/10.png'%}" alt="" >
-          <a href="#">Multicolor circulares</a>
-        </div>
-
-        <div class="product-item" category="Corazones">
-          <img src="{% static 'core/imagenes/11.png'%}" alt="" >
-          <a href="#">Corazones con girasol</a>
-        </div>
-
-        <div class="product-item" category="Circulares">
-          <img src="{% static 'core/imagenes/12.png'%}" alt="" >
-          <a href="#">Circulares con hojas</a>
-        </div>
-
-        <div class="product-item" category="Corazones">
-          <img src="{% static 'core/imagenes/13.png'%}" alt="" >
-          <a href="#">Corazones con flores</a>
-        </div> 
-
-        <div class="product-item" category="Corazones">
-          <img src="{% static 'core/imagenes/14.png'%}" alt="" >
-          <a href="#">Corazones terra</a>
-        </div>
-
-        <div class="product-item" category="Corazones">
-          <img src="{% static 'core/imagenes/18.JPG'%}" alt="" >
-          <a href="#">Corazones animalprint</a>
-        </div>
-
-        <div class="product-item" category="Corazones">
-          <img src="{% static 'core/imagenes/20.JPG'%}" alt="" >
-          <a href="#">Corazones rosa</a>
-        </div>
-
-      </section>
+  <div class="store-wrapper">
+    <div class="category_list">
+      <a href="#" class="category_item" category="all">Todos</a>  <!--Atributo creado por nosotros category para poder filtrar despues-->
+      {%for t in tipoAros%}
+      <a href="#" class="category_item" category="{{t.nombreT}}">{{ t.nombreT }}</a>
+      {% endfor %}
     </div>
+
+
+    <section class="products-list">
+      {%for a in aritos%}
+      <div class="product-item" category="{{a.tipoforma}}">
+        <img src="{{a.imagen.url}}" alt="" >
+        <a href="#">{{a.nombre}}</a>
+      </div>
+      {%endfor%}
+
+      <div class="product-item" category="Ovalos">
+        <img src="{% static 'core/imagenes/5.png'%}" alt="" >
+        <a href="#">Circulares morados</a>
+      </div>
+
+      <div class="product-item" category="Circulares">
+        <img src="{% static 'core/imagenes/4.png'%}" alt="" >
+        <a href="#">Circulares morados</a>
+      </div>
+
+      <div class="product-item" category="Circulares">
+        <img src="{% static 'core/imagenes/8.png'%}" alt="" >
+        <a href="#">Circulares morados</a>
+      </div>
+
+      <div class="product-item" category="Circulares">
+        <img src="{% static 'core/imagenes/10.png'%}" alt="" >
+        <a href="#">Multicolor circulares</a>
+      </div>
+
+      <div class="product-item" category="Corazones">
+        <img src="{% static 'core/imagenes/11.png'%}" alt="" >
+        <a href="#">Corazones con girasol</a>
+      </div>
+
+    </section>
   </div>
+</div>
 
 
 

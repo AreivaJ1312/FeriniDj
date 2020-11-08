@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="shortcut icon" href="imagenes/logo.jpeg">
+    
     <title>Ferini Accesorios de arcilla polimérica</title>
     {% load static %}
     {%block css%}
@@ -35,6 +36,23 @@
                     <li class="nav-item active">
                         <a href="{% url 'Contacto'%}" class="nav-link">Contactáctanos</a>
                     </li>
+                    {%if user.is_authenticated%}
+                      <li class="nav-item active">
+                        <a href="#" class="nav-link"> Usuario: {{ user.username}} 💻</a>
+                      </li>
+                      <li class="nav-item active">
+                        <a href="{% url 'logout'%}" class="nav-link"> Cerrar sesión</a>
+                      </li>
+                      {% else %}
+                        <li class="nav-item active">
+                          <a href="{% url 'login'%}" class="nav-link"> Iniciar sesión</a>
+                        </li>
+                        <li class="nav-item active">
+                          <a href="{% url 'registro_usuario'%}" class="nav-link">Registrarse</a>
+                        </li>
+
+                    {% endif %}
+
                 </ul>
                 <span class="navbar-text">
                   <a href="https://www.instagram.com/ferini_chic/?hl=es-la" target="blank"><img class="redes" src="{% static 'core/imagenes/insta.png'%}" alt=""></a>
