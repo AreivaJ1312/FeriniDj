@@ -1,0 +1,25 @@
+{% extends 'core/baseEstructura.html' %}
+
+{% load static %}
+{%block css%}
+<link rel="stylesheet" href="{% static 'core/css/estiloIndex.css'%}">
+{%endblock%}
+
+
+{% block contenido%}
+    <div class="container">
+        <h2>Autenticación </h2>
+        {%load crispy_forms_tags%}
+        <form action="" method="POST" >
+            {% csrf_token %}
+           
+                {{ form | crispy }}
+
+            <input type="submit" value="login" class="btn btn-primary float-right">
+        </form>
+        
+
+    </div>
+
+
+{%endblock%}
