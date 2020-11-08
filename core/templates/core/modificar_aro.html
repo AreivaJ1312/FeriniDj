@@ -10,22 +10,15 @@
 {%endblock%}
 
 {% block contenido %}
-{% load crispy_forms_tags %}
-<div class="container">
-    <h2>Modificar aro</h2>
+<h2>Modificar aro</h2>
 <form action=" " method="POST" enctype="multipart/form-data">
     {%csrf_token%}
     <table>
-        {{ form | crispy }}
+        {{ form.as_table }}
     </table>
-    <div class="float-right">
-        <input type="reset" value="Limpiar" class="btn btn-info">
-        <input type="submit" value="Modificar" class="btn btn-primary">
-    </div>
-
+    <input type="reset" value="Limpiar">
+    <input type="submit" value="Modificar">
 </form>
-</div>
-
 
 {{ mensaje }}
 
