@@ -14,9 +14,6 @@ class AroForm(ModelForm):
 
     class Meta:
         model = Aro
-<<<<<<< Updated upstream
-        fields = ['nombre','color','tamaño','stock','tipoPin','tipoforma']
-=======
         fields = ['nombre','color','tamaño','stock','tipoPin','tipoforma','imagen']
 
 
