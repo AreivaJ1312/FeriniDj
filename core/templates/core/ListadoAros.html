@@ -7,45 +7,50 @@
 {%endblock%}
 
 {%block javascript%}
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="{% static 'core/jquery/confirmacion.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{% static 'core/jquery/confirmacion.js'%}"></script>
 {%endblock%}
 
 
 {% block contenido %}
-<h2>Listado de aros</h2>
-<table>
-    <tr>
-        <th>Nombre--</th>
-        <th>color----</th>
-        <th>tamaño----</th>
-        <th>stock----</th>
-        <th>tipoPin----</th>
-        <th>tipoforma----</th>
-        <th>Opciones</th>
-       
-    </tr>
+<div class="container">
+    <div class="table-responsive-sm">
+        <h2>Listado de aros</h2>
+        <table class="table table-striped ">
+            <tr>
+                <th>Nombre</th>
+                <th>Color</th>
+                <th>Tamaño</th>
+                <th>Stock</th>
+                <th>TipoPin</th>
+                <th>Tipoforma</th>
+                <th> &nbsp;&nbsp;&nbsp;&nbsp;Opciones:</th>
+                <th></th>
+            
+            </tr>
 
-    {%for a in aros_%}
-    <tr>
+            {%for a in aros_%}
+            <tr>
 
-       <td>{{a.nombre}}</td>
-       <td>{{a.color}}</td>
-       <td>{{a.tamaño}} cm</td>
-       <td>{{a.stock}}</td>
-       <td>{{a.tipoPin}}</td>
-       <td>{{a.tipoforma}}</td>
-       <td>
-        <a href="{% url 'modificar_aro' a.id %}">Modificar</a>
-       </td>
-       <td>
-        <a href="#" onclick="confirmarEliminacion({{a.id}})">Eliminar</a> 
-       </td>
-    </tr>
-    {%endfor%}
+            <td>{{a.nombre}}</td>
+            <td>{{a.color}}</td>
+            <td>{{a.tamaño}} cm</td>
+            <td>{{a.stock}}</td>
+            <td>{{a.tipoPin}}</td>
+            <td>{{a.tipoforma}}</td>
+            <td>
+                <a href="{% url 'modificar_aro' a.id %}">Modificar</a>
+            </td>
+            <td>
+                <a href="#" onclick="confirmarEliminacion({{a.id}})">Eliminar</a> 
+            </td>
+            </tr>
+            {%endfor%}
 
-</table>
+        </table>
 
+    </div>
+</div>
 
 
 {%endblock%}
