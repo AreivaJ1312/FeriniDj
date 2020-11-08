@@ -43,6 +43,12 @@
                       <li class="nav-item active">
                         <a href="{% url 'logout'%}" class="nav-link"> Cerrar sesión</a>
                       </li>
+                      <li class="nav-item active">
+                        <a href="{%url 'nuevo_aro'%}"  class="nav-link">Nuevo Aro</a>
+                      </li>
+                      <li class="nav-item active">
+                        <a href="{%url 'ListadoAros'%}"  class="nav-link">Listado Aros</a>
+                      </li>
                       {% else %}
                         <li class="nav-item active">
                           <a href="{% url 'login'%}" class="nav-link"> Iniciar sesión</a>
@@ -60,13 +66,6 @@
                 <span class="navbar-text">
                   <a href="https://api.whatsapp.com/send?phone=56950596898" target="blank"><img class="redes" src="{% static 'core/imagenes/wp.png'%}"  alt=""></a>
                 </span>
-                <span class="navbar-text">
-                  <a href="{%url 'nuevo_aro'%}" target="blank">Nuevo Aro</a>
-                </span>
-                <span class="navbar-text">
-                  <a href="{%url 'ListadoAros'%}" target="blank">Listado Aros</a>
-                </span>
-
             </div>
           </nav>
    

@@ -53,31 +53,7 @@
 
 
   <div class="container -lg">
-    <h2>Nuevos productos</h2>
-    <div class="row row-cols-1 row-cols-md-3">
-    {%for a in aros%}
     
-      <div class="col mb-4">
-        
-        <div class="card">
-          {% if a.imagen %}
-          <img src="{{ a.imagen.url }}" class="card-img-top" alt="..." height="400px" width="400px">
-         
-
-          {%endif%}
-          <div class="card-body">
-            <h5 class="card-title">{{a.nombre}}</h5>
-            <p class="card-text"> color= {{a.color}} </p>
-            <p class="card-text"> Centimetros= {{a.tamaño}} cm </p>
-            <p class="card-text">Stock= {{a.stock}}</p>
-            <p class="card-text">Tipo Pin = {{a.tipoPin}} </p>
-            <p class="card-text">Forma= {{a.tipoforma}}</p>
-          </div>
-        </div>
-        
-      </div>
-      {%endfor%}
-      </div>
       
     <hr class=" featurette-divider">
     <br>
