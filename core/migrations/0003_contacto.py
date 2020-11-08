@@ -14,12 +14,12 @@ class Migration(migrations.Migration):
             name='Contacto',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nombreC', models.CharField(max_length=90)),
+                ('Nombre', models.CharField(max_length=90)),
                 ('apellido', models.CharField(max_length=90)),
                 ('email', models.EmailField(max_length=254)),
                 ('sugerenciaConsulta', models.CharField(max_length=10)),
                 ('comunas', models.CharField(max_length=90)),
-                ('areaText', models.CharField(max_length=300)),
+                ('Mensaje', models.CharField(max_length=300)),
             ],
         ),
     ]

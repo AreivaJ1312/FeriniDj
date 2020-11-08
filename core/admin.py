@@ -14,8 +14,8 @@ admin.site.register(Aro, AroAdmin)
 
 
 class contactAdmin(admin.ModelAdmin):
-    list_display= ['nombreC','apellido','email','sugCon','comuna','areaText']
-    search_fields= ['nombreC','apellido','email','comuna']
+    list_display= ['Nombre','apellido','email','sugCon','comuna','Mensaje']
+    search_fields= ['Nombre','apellido','email','comuna']
     list_filter = ['sugCon']
     list_per_page = 20
 

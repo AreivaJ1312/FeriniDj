@@ -3,44 +3,11 @@
     padding: 0px;
 }
 
-
-.alert{
-    display: block;
-    padding: 12px 20px;
-    background: #f8d7da;
-    color: #721c24;
-    margin-bottom: 10px;
-    border: 2px solid #ffffff;
+img{
+    display:block;
+    margin:auto;
+    align-content: center;
 }
-
-.form-completo{
-    border-radius: 30px;
-    padding: 5%;
-    background-color: rgba(144,12 ,63, 0.1);
-    
-}
-
-.formulario{
-    border-radius: 30px; 
-    border: 1px solid #b892b9;
-     
-}
-h2{
-    color: #1d4464;
-}
-
-.pcontac{
-    text-align: center;
-    font-size: large;
-    
-}
-.bordestex{
-    border-style: double;
-    border-color: #ccccce;
-    border-radius: 30px;
-    padding: 6% 10% 6% 10%;
-}
-
 .elFooter{
     text-align: center;
 }

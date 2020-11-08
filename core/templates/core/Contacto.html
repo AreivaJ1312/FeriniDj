@@ -21,7 +21,7 @@
 <div class="container">
     <hr class="featurette-divider">
     <div class="col-12 row">
-        <div class=" col-12 col-md-4">
+       
           <br>
           <h2>Ponte en contacto hoy</h2>
           <br>
@@ -31,104 +31,25 @@
               Si tienes alguna consulta, sugerencia o deseas hacer un pedido especial, no dudes en contactarnos!
               Completa el formulario y te responderemos a la brevedad posible.</p>
           </div>
-          <img  id="img-contact" src="{%static 'core/imagenes/contacto.jpg' %}"  alt="">
-        </div>  
-         
-         
-        
-        <div class=" col-12 col-md-8">
-          <br>
-          <form   method="GET" class="formulario">
-            <div class="form-completo">
-            
-            <div class="form-group">
-                <label id="mensj" for="nombre"> Nombre:</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-                <label for="apellido"> Apellido:</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Apellido">  
-                <label for="email"> Escribe tu Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com">
-            </div>
-
-            <div class="form-group">
-              <label for="sugerenciaConsulta">Sugerencia o Consulta</label>
-              <select class="form-control" id="sugerenciaConsulta" >
-                <option>... </option>
-                <option>Sugerencia</option>
-                <option>Consulta</option>
-
-              </select>
-            </div>
-            <div class="form-group">
-                <label for="comunas"> Selecciona tu Comuna</label>
-                <select class="form-control" id="comunas">
-                  <option >...</option>
-                  <option value="Santiago">Santiago</option>
-                  <option value="Conchalí">Conchalí </option>
-                  <option value="Huechuraba" >Huechuraba </option>
-                  <option value="Independencia">Independencia</option>
-                  <option value="Quilicura">Quilicura</option>
-                  <option value="Recoleta">Recoleta</option>
-                  <option value="Renca" >Renca</option>
-                  <option value="Las Condes">Las Condes</option>
-                  <option value="Lo Barnechea">Lo Barnechea</option>
-                  <option value="Providencia" >Providencia</option>
-                  <option value="Vitacura" >Vitacura</option>
-                  <option value="La Reina">La Reina</option>
-                  <option value="Macul">Macul</option>
-                  <option value="Ñuñoa">Ñuñoa</option>
-                  <option value="Peñalolén">Peñalolén</option>
-                  <option value="La Florida">La Florida</option>
-                  <option value="La Granja">La Granja</option>
-                  <option value="El Bosque">El Bosque</option>
-                  <option value="La Cisterna">La Cisterna</option>
-                  <option value="La Pintana">La Pintana</option>
-                  <option value="San Ramón">San Ramón</option>
-                  <option value="Lo Espejo">Lo Espejo</option>
-                  <option value="Pedro Aguirre Cerda">Pedro Aguirre Cerda</option>
-                  <option value="San Joaquín">San Joaquín</option>
-                  <option value="San Miguel">San Miguel</option>
-                  <option value="Cerrillos">Cerrillos</option>
-                  <option value="Estación Central">Estación Central</option>
-                  <option value="Maipú">Maipú</option>
-                  <option value="Cerro Navia">Cerro Navia</option>
-                  <option value="Lo Prado">Lo Prado</option>
-                  <option value="Pudahuel">Pudahuel</option>
-                  <option value="Quinta Normal">Quinta Normal</option>
-                  <option value="Puente Alto">Puente Alto</option>
-                  <option value="Pirque">Pirque</option>
-                </select>
-
-              </div>
-            
-            <div class="form-group">
-              <label for="areaText">Mensaje</label>
-              <textarea class="form-control" id="areaText" rows="4"></textarea>
-            </div>
           
-          <button type="button" class="btn btn-primary" onclick="validarFormulario()" > 
-            Enviar
-          </button>
-        </div>
-        </form>
-
-      </div>
+         
     </div>
+      <h2>Contacto </h2>
+      {%load crispy_forms_tags%}
+      <form action="" method="POST"  >
+          {% csrf_token %}
+        
+              {{ form | crispy }}
+
+          <div class="float-right">
+            <input type="reset" value="Limpiar" class="btn btn-info">
+            <input type="submit" value="Guardar" class="btn btn-success">
+          </div>  
+      </form>
+ 
+      <br>
+      <br>
+      <img  id="img-contact" src="{%static 'core/imagenes/contacto.jpg' %}"  alt="">
   </div>
 
-
-
-  <div class="container">
-    <h2>Contacto </h2>
-    {%load crispy_forms_tags%}
-    <form action="" method="POST" >
-        {% csrf_token %}
-       
-            {{ form | crispy }}
-
-        <input type="submit" value="Enviar" class="btn btn-primary float-right">
-    </form>
-    
-
-</div>
 {% endblock%}

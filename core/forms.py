@@ -24,16 +24,14 @@ class CustomUserForm(UserCreationForm):
 
 
 class ContactForm(ModelForm):
-    nombreC= forms.CharField( min_length=3,  max_length=90)
+    Nombre= forms.CharField( min_length=3,  max_length=90)
     apellido= forms.CharField(min_length=3,max_length=90)
     email= forms.EmailField (max_length = 254)
-    sugerenciaConsulta= forms.CharField(max_length=10)
-    comunas= forms.CharField(max_length=90)
-    areaText= forms.CharField(max_length=300)
+    Mensaje= forms.CharField(max_length=300)
 
     class Meta:
         model = Contacto
-        fields=['nombreC','apellido','email','sugCon','comuna','areaText']
+        fields=['Nombre','apellido','email','sugCon','comuna','Mensaje']
 
 
 

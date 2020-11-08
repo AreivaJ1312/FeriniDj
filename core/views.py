@@ -23,12 +23,17 @@ def aros(request):
 def Contacto(request):
     data={
         'form':ContactForm(),
-        'contacto':Contacto.objects.all(),
         'sugerencia': sugerenciaConsulta.objects.all(),
-        'nombreComuna':comunas.objects.all()
+        'nombreComuna':comunas.objects.all(),
     }
-  
+    if request.method =='POST':
+        formulario = ContactForm(request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data['mensaje'] = "Mensaje Enviado"
     return render(request,'core/Contacto.html', data)
+
+
 
 
 def ListadoAros(request):

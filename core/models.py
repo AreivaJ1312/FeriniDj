@@ -24,21 +24,27 @@ class Aro (models.Model):
 
 class sugerenciaConsulta(models.Model):
     nombreS= models.CharField(max_length=10)
-
+    def __str__(self):
+        return self.nombreS
 
 
 
 class comunas(models.Model):
     nombreComuna= models.CharField(max_length=90)
+    def __str__(self):
+        return self.nombreComuna
 
 
 
 class Contacto(models.Model):
-    nombreC= models.CharField(max_length=90)
+    Nombre= models.CharField(max_length=90, verbose_name="Ingrese su Nombre")
     apellido= models.CharField(max_length=90)
     email= models.EmailField (max_length = 254)
-    sugCon= models.ForeignKey(sugerenciaConsulta, on_delete=models.CASCADE, default=None)
-    comuna= models.ForeignKey(comunas, on_delete=models.CASCADE, default=None)
-    areaText= models.CharField(max_length=300)
+    sugCon= models.ForeignKey(sugerenciaConsulta, on_delete=models.CASCADE, default=None,verbose_name="Sugerencia o Consulta")
+    comuna= models.ForeignKey(comunas, on_delete=models.CASCADE, default=None, verbose_name="Comuna")
+    Mensaje= models.CharField(max_length=300,verbose_name= "Mensaje")
+    def __str__(self):
+        return self.Nombre
+
 
 
