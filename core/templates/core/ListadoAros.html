@@ -43,7 +43,7 @@
                 <a href="{% url 'modificar_aro' a.id %}">Modificar</a>
             </td>
             <td>
-                <a href="#" onclick="confirmarEliminacion({{a.id}})">Eliminar</a> 
+                <a href="#" onclick="confirmarEliminacion(a.id)">Eliminar</a> 
             </td>
             </tr>
             {%endfor%}
