@@ -90,7 +90,7 @@ que pueda ocupar todo el ancho de la pantalla */
 	width: 100%;
 }
 
-.products-list .product-item a{
+.products-list .product-item a {
 	display: block;
 	width: 100%;
 	padding: 8px 0;
@@ -99,6 +99,7 @@ que pueda ocupar todo el ancho de la pantalla */
 	color:  #ffffff;
 	text-align: center;
 	text-decoration: none;
+	
 }
 /*Se trata de un párrafo normal que al recibir un click esconde 
 o muestra alternativamente el contenido de un elemento DIV.
@@ -184,4 +185,8 @@ o muestra alternativamente el contenido de un elemento DIV.
 }
 #logo{
     width : 170px;
+}
+p{
+	font-size: xx-small;
+
 }
