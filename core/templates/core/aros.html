@@ -33,8 +33,8 @@
         {%for a in aritos%}
         <div class="product-item" category="{{a.tipoforma}}">
           <img src="{{a.imagen.url}}" alt="" >
-          
-          <a href="#">{{a.nombre}} <hr>Tamaño:{{a.tamaño}}cm <hr>  Pin: {{a.tipoPin}} <hr> Color: {{a.color}} </a>
+          <a href="#">{{a.nombre}} <hr><p>Tamaño:{{a.tamaño}} cm <br/> Pin: {{a.tipoPin}}
+            <br/> Color: {{a.color}} <br/></p> </a>
       
         </div>
         {%endfor%}
@@ -42,6 +42,7 @@
       </section>
     </div>
   </div>
+
 
 
 

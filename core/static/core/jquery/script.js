@@ -34,4 +34,9 @@ $(document).ready(function(){
 			$('.product-item').css('transform', 'scale(1)');
 		} setTimeout(showAll,400);
 	});
+
+	$("#btn").click(function(){
+		$('exampleModal').modal('show');
+   });
 });
+
