@@ -40,10 +40,9 @@
             <td>{{a.tipoPin}}</td>
             <td>{{a.tipoforma}}</td>
             <td>
-                <a href="{% url 'modificar_aro' a.id %}">Modificar</a>
-            </td>
-            <td>
-                <a href="#" onclick="confirmarEliminacion({{a.id}})">Eliminar</a> 
+                <a href="{% url 'modificar_aro' a.id %}" class="btn btn-info btn-sm">Modificar</a>
+ 
+                <a href="{%url 'eliminar_aro' a.id%}" onclick="confirmarEliminacion(a.id)" class="btn btn-danger btn-sm">Eliminar</a> 
             </td>
             </tr>
             {%endfor%}

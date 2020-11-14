@@ -20,36 +20,39 @@
 
 <div class="container">
     <hr class="featurette-divider">
-    <div class="col-12 row">
-       
-          <br>
-          <h2>Ponte en contacto hoy</h2>
-          <br>
+    <div class="row">
+      <div class="col-4">
+        <br>
+        <h2>Ponte en contacto hoy</h2>
+        <br>
           
-          <div class="bordestex">
-            <p class="pcontac">
+        <div class="bordestex">
+          <p class="pcontac">
               Si tienes alguna consulta, sugerencia o deseas hacer un pedido especial, no dudes en contactarnos!
               Completa el formulario y te responderemos a la brevedad posible.</p>
-          </div>
-          
-         
-    </div>
-      <h2>Contacto </h2>
-      {%load crispy_forms_tags%}
-      <form action="" method="POST"  >
-          {% csrf_token %}
-        
-              {{ form | crispy }}
+        </div>
+        <img id="img-contact" src="{%static 'core/imagenes/contacto.jpg' %}" class="img-fluid" alt="Responsive image">
+      </div>
 
-          <div class="float-right">
-            <input type="reset" value="Limpiar" class="btn btn-info">
-            <input type="submit" value="Guardar" class="btn btn-success">
-          </div>  
-      </form>
- 
-      <br>
-      <br>
-      <img  id="img-contact" src="{%static 'core/imagenes/contacto.jpg' %}"  alt="">
+      <div class="col-7">
+        <br>
+        <br>
+        {%load crispy_forms_tags%}
+        <form action="" method="POST"  >
+            {% csrf_token %}
+          
+                {{ form | crispy }}
+
+            <div class="float-right">
+              <input type="reset" value="Limpiar" class="btn btn-info">
+              <input type="submit" value="Guardar" class="btn btn-success">
+            </div>  
+        </form>
+        
+      </div>
+    </div>
+    
   </div>
 
 {% endblock%}
+
