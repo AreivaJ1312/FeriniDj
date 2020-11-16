@@ -6,6 +6,11 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import login, authenticate
 # Create your views here.
 
+
+#REST FRAMEWORK
+from rest_framework import viewsets
+from .serializers import AroSerializaer, ContactoSerializer
+
 def home(request):
     data={
         'aros':Aro.objects.all()
@@ -97,3 +102,17 @@ def registro_usuario(request):
             login(request,user)
             return redirect(to='home')
     return render(request, 'registration/registrar.html',data)
+
+
+
+
+
+class AroViewSet(viewsets.ModelViewSet):
+    queryset = Aro.objects.all()
+    serializer_class = AroSerializaer
+
+
+
+
+
+

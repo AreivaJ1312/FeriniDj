@@ -1,7 +1,14 @@
-from django.urls import path
-from .views import home, aros, Contacto, ListadoAros, nuevo_aro,modificar_aro, elimimar_aro, registro_usuario
+from django.urls import path, include
+from .views import home, aros, Contacto, ListadoAros, nuevo_aro,modificar_aro, elimimar_aro, registro_usuario, AroViewSet
 from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from django.contrib.auth import views as auth_views
+
+#rest_framework
+from rest_framework import routers
+
+
+router = routers.DefaultRouter()
+router.register('Aro', AroViewSet)
 
 urlpatterns = [
     path('', home, name ="home"),
@@ -16,4 +23,5 @@ urlpatterns = [
     path('reset/password_reset_done', auth_views.PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), name="password_reset_done"),
     path('reset/password_reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'), name='password_reset_confirm'),
     path('reset/password_reset/done', auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'), name='password_reset_complete'),
+    path('api/',include(router.urls)),
 ]
