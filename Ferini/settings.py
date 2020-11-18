@@ -35,8 +35,7 @@ LOGOUT_REDIRECT_URL='/'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '833967120751547'
 SOCIAL_AUTH_FACEBOOK_SECRET = '630fec55332997e4c7fa31c0a752cf9f'
-
-SOCIAL_AUTH_FACEBOOK_API_VERSION = '2.10'
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
 
 # Application definition
@@ -44,6 +43,7 @@ SOCIAL_AUTH_FACEBOOK_API_VERSION = '2.10'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -52,7 +52,26 @@ INSTALLED_APPS = [
     'crispy_forms',
     'rest_framework',
     'social_django',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    
+
 ]
+
+THIRD_PARTY_APPS = (
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    
+)
+LOCAL_APPS = (
+    'posts',
+    'users',
+)
+SITE_ID = 1
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
@@ -64,6 +83,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    
     
 ]
 
@@ -158,6 +178,35 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
+    
+    # Metodo de autenticación especifico de allauth, como logear por email
+   'allauth.account.auth_backends.AuthenticationBackend',
 )
 
+ACCOUNT_EMAIL_VERIFICATION = "none"
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile', 'user_friends'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'email',
+            'name',
+            'first_name',
+            'last_name',
+            'verified',
+            'locale',
+            'timezone',
+            'link',
+            'gender',
+            'updated_time',
+        ],
+        'EXCHANGE_TOKEN': True,
+        'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v2.12',
+    }
+}
 

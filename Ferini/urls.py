@@ -25,7 +25,10 @@ urlpatterns = [
     path('', include('core.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
-]
+    path('accounts/', include('allauth.urls')),
+    
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 admin.site.site_header =" Administración Ferini chic"
 admin.site.index_title =" Módulos de administración"
