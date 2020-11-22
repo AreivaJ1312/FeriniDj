@@ -28,7 +28,7 @@ SECRET_KEY = '7%a&ug=4gkmzpm3r4j7c)_$wf=knplt+gz1kv*+a&ycy35wh%q'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CORS_ORIGIN_ALOWE_ALLC= True
 LOGIN_REDIRECT_URL='/'
 LOGOUT_REDIRECT_URL='/'
 
@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+    'corsheaders',
     
 
 ]
@@ -83,6 +84,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     
     
 ]
