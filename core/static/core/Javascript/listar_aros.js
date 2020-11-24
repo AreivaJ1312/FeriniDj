@@ -1,4 +1,5 @@
 $document.ready(function(){
+    console.log(ahora)
     obtenerListaAros();
 
 });
@@ -7,8 +8,8 @@ function obtenerListaAros(){
     console.log("AQUI")
     $.get({
         url:'http://127.0.0.1:8000/api/Aro/',
-        success: function(json){
-            console.log("jason")
+        success: function(listado){
+            console.log(listado)
 
         },
         error: function(error){

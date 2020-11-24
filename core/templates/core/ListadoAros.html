@@ -10,11 +10,14 @@
 {%block javascript%}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="{% static 'core/Javascript/confirmacion.js'%}"></script>
+
 {%endblock%}
 
 
 {% block contenido %}
+
 <div class="container">
+    obtenerListaAros();
     <div class="table-responsive-sm">
         <h2>Listado de aros</h2>
         <table class="table table-striped ">
