@@ -32,10 +32,7 @@ CORS_ORIGIN_ALOWE_ALLC= True
 LOGIN_REDIRECT_URL='/'
 LOGOUT_REDIRECT_URL='/'
 
-
-SOCIAL_AUTH_FACEBOOK_KEY = '833967120751547'
-SOCIAL_AUTH_FACEBOOK_SECRET = '630fec55332997e4c7fa31c0a752cf9f'
-ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
+#ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
 
 # Application definition
@@ -55,18 +52,12 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
     'corsheaders',
     
 
 ]
 
-THIRD_PARTY_APPS = (
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    
-)
 LOCAL_APPS = (
     'posts',
     'users',
@@ -179,8 +170,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 AUTHENTICATION_BACKENDS = (
-    'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
     
     # Metodo de autenticación especifico de allauth, como logear por email
    'allauth.account.auth_backends.AuthenticationBackend',
@@ -188,28 +179,14 @@ AUTHENTICATION_BACKENDS = (
 
 ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_PROVIDERS = {
-    'facebook': {
-        'METHOD': 'oauth2',
-        'SCOPE': ['email', 'public_profile', 'user_friends'],
-        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-        'INIT_PARAMS': {'cookie': True},
-        'FIELDS': [
-            'id',
+    'google': {
+        'SCOPE': [
+            'profile',
             'email',
-            'name',
-            'first_name',
-            'last_name',
-            'verified',
-            'locale',
-            'timezone',
-            'link',
-            'gender',
-            'updated_time',
         ],
-        'EXCHANGE_TOKEN': True,
-        'LOCALE_FUNC': 'path.to.callable',
-        'VERIFIED_EMAIL': False,
-        'VERSION': 'v2.12',
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
     }
 }
 REST_FRAMEWORK = {

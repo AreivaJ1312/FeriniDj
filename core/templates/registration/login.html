@@ -15,6 +15,7 @@
 
 {% block contenido%}
 {% load socialaccount %}
+
     <div class="container">
         <div class="row">
             <div class="col-6">
@@ -31,8 +32,8 @@
 
                     <input type="submit" value="login" class="btn btn-primary float-right">
                     <a href="{% url 'password_reset' %}"> Olvide mi contraseña</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a  href="{% provider_login_url "facebook" method="oauth2" %}">Login con facebook</a>
-                    <a href="{% url 'social:begin' 'facebook' %}">Login con facebook22</a>
+                    <a href="{% provider_login_url 'google' %}">Login with Google</a>
+                    
                 
                 </form>
 
