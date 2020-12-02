@@ -4,6 +4,7 @@ from .forms  import AroForm
 from .forms  import AroForm, CustomUserForm, ContactForm
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import login, authenticate
+from rest_framework import permissions
 # Create your views here.
 
 
@@ -110,6 +111,7 @@ def registro_usuario(request):
 class AroViewSet(viewsets.ModelViewSet):
     queryset = Aro.objects.all()
     serializer_class = AroSerializaer
+    permission_classes = [permissions.IsAuthenticated]
 
 
 
