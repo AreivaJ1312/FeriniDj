@@ -21,8 +21,6 @@ h5{
     height: 40%;
 }
 
-
-
 .fotos img{
     border-radius: 100%; /* para darle forma a la foto*/
     height: 30vh;
@@ -30,15 +28,11 @@ h5{
     margin:auto;
 }
 
-
 figure{
     flex-direction: column;
     align-items: center;
     padding: 5%;
 }
-
-
-
 
 h3{
     display: flex;
@@ -46,9 +40,7 @@ h3{
     align-items: center;
 }
 
-
 footer{
-   
     padding: 1.5em;
 }
 .elFooter{
@@ -61,12 +53,15 @@ footer{
     height: 50px;
     padding: 5px;
 }
+
 body{
 	font-family: 'Open Sans', sans-serif;
 }
+
 .fotoi{
     height:300px;
 }
+
 h2{
     color: #1d4464;
     text-align: center;
