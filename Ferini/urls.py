@@ -29,8 +29,9 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
     path('accounts/', include('allauth.urls')),
-     path('', TemplateView.as_view(template_name="social_app/index.html")),
-    
+    path('', TemplateView.as_view(template_name="social_app/index.html")),
+    path('', include('pwa.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

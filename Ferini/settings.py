@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'corsheaders',
+    'pwa',
     
 
 ]
@@ -196,3 +197,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+PWA_SERVICE_WORKER_PATH =os.path.join(BASE_DIR, 'serviceworker.js')

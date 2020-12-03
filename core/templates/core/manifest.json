@@ -1,0 +1,9 @@
+{
+    "short_name": "Aros",
+    "name": "duoc UC",
+    "start_url": "/home/",
+    "background_color": "#0598EC",
+    "theme_color": "#0598EC",
+    "orientation": "portrait",
+    "display": "standalone"
+}
