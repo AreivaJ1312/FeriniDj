@@ -1,0 +1,47 @@
+{% extends 'core/baseEstructura.html' %}
+
+
+{% load static %}
+{%block css%}
+<link rel="stylesheet" href="{% static 'core/css/apiTiempo.css'%}">
+{%endblock%}
+
+{%block javascript%}
+<script src="{% static 'core/Javascript/pronostico.js '%}"></script> 
+<script src="{% static 'core/Javascript/appTiempo.js '%}"></script> 
+{%endblock%}
+
+{% block contenido%}
+
+    
+    <div id="divTiempo"  class="container my-5 mx-auto">
+
+        <h1 class="text-muted text-center my-4">El tiempo</h1>
+        <form  class="change-location my-4 text-center text-muted">
+            <label for="city">Ingresa tu zona</label>
+            <input type="text" name="city" class="form-control p-4">
+        </form>
+
+        <div class="card shadow-lg rounded d-none">
+            <img src="https://via.placeholder.com/400x300/" class="time card-img">
+            <div class="icon bg-light mx-auto text-center">
+                <img src="" alt="">
+                <!--icon-->
+            </div>
+            <div class="text-muted text-uppercase text-center details">
+                <h5 class="my-3">nombre ciudad</h5>
+                <div class="my-3">condiciones del tiempo</div>
+                <div class="display-4 my4">
+                    <span>temperatura</span>
+                    <span>&deg;</span>
+                </div>
+               
+            </div>
+ 
+        </div>
+
+
+    </div>
+
+
+{%endblock%}

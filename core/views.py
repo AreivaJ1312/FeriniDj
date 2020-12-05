@@ -114,7 +114,9 @@ class AroViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 
-
+def apiTiempo(request):
+    
+    return render(request,'core/apiTiempo.html')
 
 
 
