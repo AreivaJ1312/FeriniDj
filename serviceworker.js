@@ -1,7 +1,15 @@
 //instalacion e interceptacion 
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-    '/',
+    '/',  
+    '/aros',
+    '/Contacto',
+    '/static/core/css/estiloContacto.css',
+    '/static/core/imagenes/contacto.jpg',
+   
+    
+   
+  
 ];
 
 self.addEventListener('install', function(event) {
