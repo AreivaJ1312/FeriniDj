@@ -4,7 +4,13 @@ from .forms  import AroForm
 from .forms  import AroForm, CustomUserForm, ContactForm
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import login, authenticate
+from rest_framework import permissions
 # Create your views here.
+
+
+#REST FRAMEWORK
+from rest_framework import viewsets
+from .serializers import AroSerializaer, ContactoSerializer
 
 def home(request):
     data={
@@ -97,3 +103,20 @@ def registro_usuario(request):
             login(request,user)
             return redirect(to='home')
     return render(request, 'registration/registrar.html',data)
+
+
+
+
+
+class AroViewSet(viewsets.ModelViewSet):
+    queryset = Aro.objects.all()
+    serializer_class = AroSerializaer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+def apiTiempo(request):
+    
+    return render(request,'core/apiTiempo.html')
+
+
+
