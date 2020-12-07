@@ -5,7 +5,7 @@ var urlsToCache = [
     '/aros',
     '/Contacto',
     '/static/core/css/estiloContacto.css',
-    '/static/core/imagenes/contacto.jpg',
+    '/static/core/imagenes',
    
     
    
