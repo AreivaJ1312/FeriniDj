@@ -5,13 +5,10 @@
 
 {%block css%}
 <link rel="stylesheet" href="{% static 'core/css/estiloIndex.css'%}">
+<link rel="stylesheet" href="{% static 'css/btnpwa.css' %}">
 {%endblock%}
 
-{%block javascript%}
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-{%endblock%}
+
 {% block contenido%}
 <div id="contenidoPrincipal">
   <div class="container">
@@ -140,7 +137,26 @@
 
 </div> 
 
+<!--Boton para PWA-->
+<div id="prompt" class="prompt hide bg-light border-top">
+  <div class="font-weight-bold">Agregar Aplicación</div>
+  <small>Esta aplicación web puede ser instalada</small>
+  <div class="text-right">
+    <button id="buttonCancel" type="button" class="font-weight-bold text-muted btn-sm btn btn-link">CANCELAR</button>
+    <button id="buttonAdd" type="button" class="font-weight-bold text-primary btn-sm btn btn-link">ACEPTAR</button>
+  </div>
 </div>
+
+
+</div>
+
+{%endblock%}
+
+{%block javascript%}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="{% static 'js/btnpwa.js' %}" ></script>
 
 {%endblock%}
 
