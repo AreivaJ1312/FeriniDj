@@ -31,7 +31,14 @@ ALLOWED_HOSTS = []
 CORS_ORIGIN_ALOWE_ALLC= True
 LOGIN_REDIRECT_URL='/'
 LOGOUT_REDIRECT_URL='/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
+
+
+# Subidas de archivos
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
 #ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
 

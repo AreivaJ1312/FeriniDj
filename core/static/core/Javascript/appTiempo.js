@@ -18,12 +18,12 @@ const updateUI = (data) => {
         </div>
      `;
 
-     //update the night/day & icon images
-    const iconSrc = ` img/icons/${weather.WeatherIcon}.svg `;
+     //cargar imagens dia o noche
+    const iconSrc = '{ % static img/icons/'+weather.WeatherIcon + '.svg %}';
     icon.setAttribute('src', iconSrc);
 
 
-     let timeSrc = weather.IsDayTime ? '/core/static/core/img/day.svg' : '/core/static/core/img/night.svg';
+     let timeSrc = weather.IsDayTime ? ' { % static  /core/static/core/img/day.svg %} ' : '{ % /core/static/core/img/night.svg %}' ;
     time.setAttribute('src',timeSrc);
 
      //remove the d-none class if present

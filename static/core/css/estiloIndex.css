@@ -1,0 +1,68 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h5{
+    font-size: xx-large;
+    color: black;
+    animation-timing-function: inherit;
+}
+
+#descripcion{
+    text-align: center;
+}
+
+
+#masa1{
+    float: right;
+    margin:5px;
+    width:30%;
+    height: 40%;
+}
+
+.fotos img{
+    border-radius: 100%; /* para darle forma a la foto*/
+    height: 30vh;
+    display:block;
+    margin:auto;
+}
+
+figure{
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+}
+
+h3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer{
+    padding: 1.5em;
+}
+.elFooter{
+    text-align: center;
+}
+#logo{
+    width : 170px;
+}
+.redes{
+    height: 50px;
+    padding: 5px;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.fotoi{
+    height:300px;
+}
+
+h2{
+    color: #1d4464;
+    text-align: center;
+}
