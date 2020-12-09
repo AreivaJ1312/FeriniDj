@@ -1,3 +1,4 @@
+
 const cityForm = document.querySelector('form');
 const card = document.querySelector('.card');
 const details = document.querySelector('.details');
@@ -19,11 +20,11 @@ const updateUI = (data) => {
      `;
 
      //cargar imagens dia o noche
-    const iconSrc = '{ % static img/icons/'+weather.WeatherIcon + '.svg %}';
+    const iconSrc = 'static/core/img/icons/' +weather.WeatherIcon + '.svg';
     icon.setAttribute('src', iconSrc);
 
 
-     let timeSrc = weather.IsDayTime ? ' { % static  /core/static/core/img/day.svg %} ' : '{ % /core/static/core/img/night.svg %}' ;
+     let timeSrc = weather.IsDayTime ? 'static/core/img/day.svg' : 'static/core/img/night.svg' ;
     time.setAttribute('src',timeSrc);
 
      //remove the d-none class if present
