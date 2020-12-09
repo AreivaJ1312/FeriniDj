@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+img{
+    display:block;
+    margin:auto;
+    align-content: center;
+}
+.elFooter{
+    text-align: center;
+}
+.redes{
+    height: 50px;
+    padding: 5px;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+#logo{
+    width : 170px;
+}
+
