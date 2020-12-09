@@ -82,7 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-  window.matchMedia('(display-mode: standalone)').addEventListener((evt) => {
+  window.matchMedia('(display-mode: standalone)').addListener((evt) => {
     let displayMode = 'browser tab';
     if (evt.matches) {
       displayMode = 'standalone';
