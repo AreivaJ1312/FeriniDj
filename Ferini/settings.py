@@ -190,7 +190,7 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
-            
+            'profile',
             'email',
         ],
         'AUTH_PARAMS': {

@@ -49,6 +49,13 @@ class Contacto(models.Model):
         return self.Nombre
 
 
+class Profile(models.Model):
+    name = models.CharField(max_length=90)
+    def _str_(self):
+        return self.name
+
+
+
 @receiver(user_signed_up)
 def create_user_profile(request, user, **kwargs):
     profile = Profile.objects.create(user=user)
