@@ -16,12 +16,8 @@
 {% load socialaccount %}
 <div class="container">
     <div class="row">
-        <div class="col-5">
-            <img src="{%static 'core/imagenes/registrarse.jpg' %}" class="img-fluid" alt="Responsive image">
-        </div>
-
-
-        <div class="col-7">
+        <div class="col-2"></div>
+        <div class="col-8">
             {% load crispy_forms_tags %}
             <h2>Registro de usuario</h2>
             <form action="" method="POST">
@@ -29,14 +25,22 @@
                 <table>
                     {{ form | crispy}}
                 </table>
-                <div class="float-right">
-                    <input type="reset" value="Limpiar" class="btn btn-info">
-                    <input type="submit" value="Registrar" class="btn btn-primary">
-                    
-                    <a href="{% provider_login_url 'google' %}">Login with Google</a>
+                <div class="row float-right">
+                    <div class="col-4 col-md-5">
+                        <a href="{% provider_login_url 'google' %}">Login with Google</a>
+                    </div>
+                    <div class="col-4 col-md-4">
+                        <input type="reset" value="Limpiar" class="btn btn-info">
+                    </div>    
+                    <div class="col-4 col-md-3">
+                        <input type="submit" value="Registrar" class="btn btn-primary">
+                    </div>    
                 </div>
             </form>
+            <img src="{%static 'core/imagenes/registrarse.jpg' %}" class="img-fluid" alt="Responsive image">
+            
         </div>
+        <div class="col-2"></div>
 
 
     </div>

@@ -13,27 +13,23 @@
 {%endblock%}
 
 
-
-
 {% block contenido %}
 
 <div class="container">
     <hr class="featurette-divider">
     <div class="row">
-      <div class="col-4">
+      <div class="col-2"></div>   
+      <div class="col-8">
         <br>
-        <h2>Ponte en contacto hoy</h2>
+        <h2 class="text-center">Ponte en contacto hoy</h2>
         <br>
           
         <div class="bordestex">
-          <p class="pcontac">
+          <p class="pcontac text-center">
               Si tienes alguna consulta, sugerencia o deseas hacer un pedido especial, no dudes en contactarnos!
               Completa el formulario y te responderemos a la brevedad posible.</p>
         </div>
         <img id="img-contact" src="{%static 'core/imagenes/contacto.jpg' %}" class="img-fluid" alt="Responsive image">
-      </div>
-
-      <div class="col-7">
         <br>
         <br>
         {%load crispy_forms_tags%}
@@ -49,9 +45,11 @@
         </form>
         
       </div>
+      <div class="col-2"></div>
     </div>
     
   </div>
+         
 
 {% endblock%}
 
